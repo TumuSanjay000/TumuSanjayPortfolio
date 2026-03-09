@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumu Sanjay Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 50px 8%;
+        }
+
+        h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 18px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #111;
+            font-size: 16px;
+        }
+
+        nav ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #ff2e2e;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transition: .3s;
+        }
+
+        nav ul li:hover::after {
+            width: 100%;
+        }
+
+        /* HERO */
+
+        .firstsection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            min-height: 85vh;
+        }
+
+        .leftsection {
+            font-size: 50px;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .leftsection p {
+            font-size: 18px;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        .highlight {
+            color: #ff2e2e;
+            font-weight: 600;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            height: 52px;
+        }
+
+        .btn-primary {
+            background: #ff2e2e;
+            color: white;
+            border: 2px solid #ff2e2e;
+        }
+
+        .btn-primary:hover {
+            background: #c71f1f;
+        }
+
+        .btn-outline {
+            border: 2px solid #ff2e2e;
+            background: transparent;
+            color: #ff2e2e;
+        }
+
+        .btn-outline:hover {
+            background: #ff2e2e;
+            color: white;
+        }
+
+        .socials {
+            margin-top: 25px;
+        }
+
+        .socials a {
+            font-size: 30px;
+            margin: 0 18px;
+            color: #444;
+            transition: .3s;
+        }
+
+        .socials a:hover {
+            color: #ff2e2e;
+            transform: translateY(-4px);
+        }
+
+        .rightsection img {
+            width: 460px;
+            max-width: 100%;
+            transition: .4s;
+        }
+
+        .rightsection img:hover {
+            transform: scale(1.05);
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #f7f7f7;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image img {
+            width: 420px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .about-content {
+            max-width: 650px;
+        }
+
+        .about-content p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* EXPERIENCE */
+
+        .exp-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .exp-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+        }
+
+        .exp-card {
+            background: #000;
+            color: white;
+            padding: 35px;
+            border-radius: 35px;
+            transition: .35s;
+            cursor: pointer;
+        }
+
+        .exp-card:hover {
+            background: #ff2e2e;
+            transform: translateY(-8px);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .exp-card li {
+            margin-bottom: 10px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            padding: 100px 8%;
+            background: #f7f7f7;
+        }
+
+        .projects-title {
+            font-size: 42px;
+            margin-bottom: 60px;
+        }
+
+        .projects-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .projects-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .projects-row.one {
+            justify-content: center;
+        }
+
+        .projects-row.two {
+            justify-content: center;
+        }
+
+        .project-card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 35px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            transition: 0.35s;
+            cursor: pointer;
+        }
+
+        .project-card.small {
+            width: 560px;
+            height: 360px;
+        }
+
+        .project-card.big {
+            width: 450px;
+            height: 720px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(301deg, rgba(0, 0, 0, 0.8) 33.19%, rgba(0, 0, 0, 0.2));
+        }
+
+        .project-content {
+            position: relative;
+            color: white;
+            padding: 25px;
+            z-index: 2;
+        }
+
+        .project-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            font-size: 15px;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        .project-btn {
+            display: inline-block;
+            background: #ff2e2e;
+            color: white;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            background: white;
+            color: black;
+        }
+
+        @media(max-width:900px) {
+
+            .project-card.big {
+                width: 100%;
+                height: 320px;
+            }
+
+            .project-card.small {
+                width: 100%;
+                height: 260px;
+            }
+
+            .projects-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: #f7f7f7;
+        }
+
+        .contact-subtitle {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: #ff2e2e;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 320px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-btn {
+            background: #ff2e2e;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .contact-btn:hover {
+            background: black;
+        }
+
+        /* MOBILE */
+
+        @media(max-width:900px) {
+
+            .firstsection {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .leftsection {
+                font-size: 36px;
+            }
+
+            .rightsection img {
+                width: 300px;
+            }
+
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image img {
+                width: 280px;
+            }
+
+            .exp-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+
+            <div class="logo">Tumu Sanjay</div>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <section id="home" class="firstsection">
+
+        <div class="leftsection">
+
+            Hi, My name is <span class="highlight">Sanjay</span>
+
+            <p>AI Developer | Full Stack Developer | Data Analyst</p>
+
+            <div class="buttons">
+                <a href="photos/TumuSanjay_CV.pdf"><button class="btn btn-primary">Download CV</button></a>
+                <a href="#projects"><button class="btn btn-outline">View Projects</button></a>
+            </div>
+
+            <div class="socials">
+
+                <a href="https://github.com/TumuSanjay000" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/sanjaytumu" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="rightsection">
+            <img src="photos/profilephoto.png" alt="">
+        </div>
+    </section>
+    <section id="about" class="about">
+
+        <div class="about-container">
+
+            <div class="about-image">
+                <img src="photos/stagepic.png" alt="">
+            </div>
+
+            <div class="about-content">
+
+                <h2>About Me</h2>
+
+                <p>
+                    I am <b>Tumu Sanjay</b>, an AI and Full Stack Developer currently pursuing my
+                    MSc in Advanced Computer Science at the University of Hertfordshire, UK.
+                </p>
+
+                <p>
+                    With over <b>one year of professional experience</b> working with Student Tribe in Hyderabad, India,
+                    I contributed to organizing technical workshops, student development programs, and large-scale
+                    academic events.
+                </p>
+
+                <p>
+                    In addition, I served as the <b>PR and Logistics Head at StreetCause CMRIT</b> for nearly three
+                    years, organizing social initiatives and community outreach programs.
+                </p>
+
+                <p>
+                    I have a strong passion for building intelligent systems and scalable web
+                    applications using Python, Machine Learning, React, Node.js and MongoDB.
+                </p>
+
+            </div>
+
+        </div>
+
+        <a href="#projects" class="down-arrow">
+            <i class="fa-solid fa-angle-down"></i>
+        </a>
+
+    </section>
+
+    <section id="experience" class="experience">
+
+        <h2 class="exp-title">Experience</h2>
+
+        <div class="exp-container">
+
+            <div class="exp-card">
+
+                <div class="exp-header">
+                    <h3>Student Tribe</h3>
+                    <span>2023-2024</span>
+                </div>
+
+                <ul>
+                    <li>Delivered 8+ web development projects under team mentorship using React.js, HTML, CSS, and
+                        JavaScript.</li>
+                    <li>Collaborated with cross-functional teams of 5–7 members to build and deploy responsive
+                        client-based web applications.</li>
+                    <li>Worked with 3+ external organizations to gather requirements and deliver customized frontend
+                        solutions.</li>
+                    <li>Improved UI responsiveness and reduced page load time by approximately 20% through code
+                        optimization.</li>
+                    <li>Contributed to API integration and debugging, resolving 15+ frontend issues during development
+                        lifecycle.</li>
+                </ul>
+
+            </div>
+
+            <div class="exp-card">
+
+                <div class="exp-header">
+                    <h3>StreetCause</h3>
+                    <span>2022-2024</span>
+                </div>
+
+                <ul>
+                    <li>Assisted in organizing technical workshops</li>
+                    <li>Led Public Relations and Logistics operations for social and technical events.</li>
+                    <li>Coordinated with sponsors, volunteers, and organizing committees.</li>
+                    <li>Managed event planning, budgeting, and execution strategies.</li>
+                    <li>Supervised teams to ensure structured workflow and timely completion of tasks.</li>
+                    <li>Strengthened leadership and problem-solving abilities in high-pressure environments.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section id="projects" class="projects">
+
+        <h2 class="projects-title">Projects</h2>
+
+        <div class="projects-wrapper">
+
+            <div class="projects-row two">
+
+                <div class="project-card small" style="background-image:url('photos/youtube.webp')">
+                    <div class="project-content">
+                        <h3>Views Prediction using ML</h3>
+                        <p>Deep learning model to classify fake news using LSTM and NLP techniques.</p>
+                        <a href="https://www.linkedin.com/posts/sanjaytumu_machinelearning-ugcPost-7420177355375071232-Hu0F?utm_source=share&utm_medium=member_desktop&rcm=ACoAADjjBm4BhyYa3MjyJ3TreXf7wk5BZIV2kio"
+                            target="_blank" class="project-btn">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card small" style="background-image:url('photos/water.jpg')">
+                    <div class="project-content">
+                        <h3>Water Potability Analysis</h3>
+                        <p>Statistical analysis of water quality dataset using R and Welch T-test.</p>
+                        <a href="https://github.com/TumuSanjay/group_B_158-Group-project-report" target="_blank"
+                            class="project-btn">View Project</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="projects-row one">
+
+                <div class="project-card big" style="background-image:url('photos/olx.webp')">
+                    <div class="project-content">
+                        <h3>Online Marketplace App</h3>
+                        <p>MERN stack marketplace with user authentication, product listings and bidding system.</p>
+                        <a href="https://www.linkedin.com/posts/sanjaytumu_careerxchallenge-html-css-ugcPost-7237491595724406784-HD8Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAADjjBm4BhyYa3MjyJ3TreXf7wk5BZIV2kio"
+                            target="_blank" class="project-btn">View Project</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="projects-row two">
+
+                <div class="project-card small" style="background-image:url('photos/spotify.webp')">
+                    <div class="project-content">
+                        <h3>Spotify Clone</h3>
+                        <p>Responsive music streaming UI built with HTML, CSS and JavaScript.</p>
+                        <a href="https://www.linkedin.com/posts/sanjaytumu_careerxchallenge-html-css-ugcPost-7195419688045010944-Beoe?utm_source=share&utm_medium=member_desktop&rcm=ACoAADjjBm4BhyYa3MjyJ3TreXf7wk5BZIV2kio"
+                            target="_blank" class="project-btn">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card small" style="background-image:url('photos/trade.png')">
+                    <div class="project-content">
+                        <h3>Crypto Tracker</h3>
+                        <p>Real-time cryptocurrency tracking dashboard with charts and API integration.</p>
+                        <a href="https://www.linkedin.com/posts/sanjaytumu_careerxchallenge-html-css-ugcPost-7216917304851189760-2SON?utm_source=share&utm_medium=member_desktop&rcm=ACoAADjjBm4BhyYa3MjyJ3TreXf7wk5BZIV2kio"
+                            target="_blank" class="project-btn">View Project</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="projects-row one">
+
+                <div class="project-card big" style="background-image:url('photos/photography.jpg')">
+                    <div class="project-content">
+                        <h3>PhotoStudio</h3>
+                        <p>Designed webpage for photo Studios and added a personal shopping portal</p>
+                        <a href="https://www.linkedin.com/posts/sanjaytumu_careerxchallenge-html-css-ugcPost-7199377629513203712-0Ogf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADjjBm4BhyYa3MjyJ3TreXf7wk5BZIV2kio"
+                            target="_blank" class="project-btn">View Project</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section id="contact" class="contact">
+
+        <h2 class="contact-title">Contact</h2>
+
+        <p class="contact-subtitle">
+            Feel free to reach out if you would like to collaborate, discuss a project, or just connect.
+        </p>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>thumusanjay000@gmail.com</span>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/sanjaytumu" target="_blank">linkedin.com/in/sanjaytumu</a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/TumuSanjay000" target="_blank">github.com/TumuSanjay000</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <script>
+        window.addEventListener("load", function () {
+            window.scrollTo(0, 0);
+        });
+    </script>
+</body>
+<footer style="text-align:center;padding:30px;background:#111;color:white;">
+    © 2026 Tumu Sanjay
+</footer>
+
+</html>
